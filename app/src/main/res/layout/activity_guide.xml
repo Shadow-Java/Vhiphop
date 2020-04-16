@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_guide"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_dots_layout"
+        android:layout_width="256dp"
+        android:layout_height="165dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dimen_24dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">//gravity水平方向上是居中的
+
+        <ImageView
+            android:layout_width="68dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/dimen_6dp"
+            android:src="@drawable/dot" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/dimen_6dp"
+            android:src="@drawable/dot" />
+
+        <ImageView
+            android:layout_width="77dp"
+            android:layout_height="94dp"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/dimen_6dp"
+            android:src="@drawable/dot" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>

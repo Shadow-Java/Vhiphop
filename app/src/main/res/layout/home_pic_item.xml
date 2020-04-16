@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    scaleType缩放 在XY上-->
+    <ImageView
+        android:id="@+id/iv_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"/>
+    <!-- gravity为自己（本身）布局的位置   layout_gravity 表示为父布局的位置-->
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_40dp"
+        android:textSize="@dimen/dimen_15sp"
+        android:layout_gravity="bottom|left"
+        android:layout_marginLeft="@dimen/dimen_6dp"
+        android:textColor="@color/white"/>
+
+</FrameLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<!--  lay-list 表示item可以进行层级叠加 如前面图 后面图-->
+    <item android:id="@android:id/background"
+        android:drawable="@color/loading_web_bg_color">
+    </item>
+    <!--    自定义形状 clip剪刀型 gradient表示梯度渐变-->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <gradient android:startColor="@color/progress_start_color"
+                    android:centerColor="@color/progress_center_color"
+                    android:endColor="@color/progrss_end_color"/>
+            </shape>
+        </clip>
+    </item>
+</layer-list>

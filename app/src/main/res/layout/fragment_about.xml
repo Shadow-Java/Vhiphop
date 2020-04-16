@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_220dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
+ <!--     用于版本号 gravity是用于内容中心    -->
+
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:layout_width="@dimen/dimen_100dp"-->
+<!--            android:layout_height="@dimen/dimen_100dp"-->
+<!--            android:src="@drawable/ic_launcher"-->
+<!--            app:border_color="@color/white"-->
+<!--            app:border_width="@dimen/dimen_2sp"-->
+<!--            app:border_overlay="true"/>-->
+        <!--  圆形图 border是边框设置  -->
+
+        <ImageView
+            android:layout_width="@dimen/dimen_150dp"
+            android:layout_height="@dimen/dimen_150dp"
+            android:src="@drawable/ic_launcher"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Version 2.0"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:textSize="@dimen/dimen_16sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textSize="@dimen/dimen_20dp"
+        android:text="应用介绍与帮助"
+        android:textColor="@color/colorPrimary"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="@dimen/dimen_10dp"
+        app:cardElevation="@dimen/dimen_10dp">
+
+        <TextView
+            android:id="@+id/tv_app_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_description"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/dimen_20sp"
+            android:layout_margin="@dimen/dimen_6dp"
+            />
+
+      </androidx.cardview.widget.CardView>
+</LinearLayout>

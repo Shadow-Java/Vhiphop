@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/guide3">
+    //展示一个图片
+
+    <ImageView
+        android:id="@+id/iv_start"
+        android:layout_width="@dimen/dimen_190dp"
+        android:layout_height="@dimen/dimen_190dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_start"
+        android:scaleType="centerCrop"/>//防止变形 centerCrop ic_start为按钮 父布局居中
+
+</RelativeLayout>

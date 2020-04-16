@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Vhiphop</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+    <string name="home_title">HOME</string>
+    <string name="blog_title">BLOG</string>
+    <string name="about_title">ABOUT</string>
+
+    <string name="app_description">
+        1.聚合海量视频，视频来源于搜狐，乐视\n
+        2.基于ijkplayer,解码支持RMVB，MKV,WMA,MP4...等主流音视频格式，达到万能播放\n
+        3.收藏影视剧，播放历史，一个不缺\n
+        4.直播高清央视及卫视节目。\n
+    </string>
+
+    <string name="a_name">大话西游</string>
+    <string name="b_name">无间道</string>
+    <string name="c_name">英雄本色</string>
+    <string name="d_name">古惑仔</string>
+    <string name="e_name">赌神</string>
+
+
+</resources>

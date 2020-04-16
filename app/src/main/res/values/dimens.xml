@@ -1,0 +1,48 @@
+<resources>
+    <dimen name="dimen_0dp">0dp</dimen>
+    <dimen name="dimen_2dp">1dp</dimen>
+    <dimen name="dimen_4dp">2dp</dimen>
+    <dimen name="dimen_6dp">3dp</dimen>
+    <dimen name="dimen_8dp">4dp</dimen>
+    <dimen name="dimen_10dp">5dp</dimen>
+    <dimen name="dimen_12dp">6dp</dimen>
+    <dimen name="dimen_14dp">7dp</dimen>
+    <dimen name="dimen_16dp">8dp</dimen>
+    <dimen name="dimen_18dp">9dp</dimen>
+    <dimen name="dimen_20dp">10dp</dimen>
+    <dimen name="dimen_30dp">15dp</dimen>
+    <dimen name="dimen_32dp">16dp</dimen>
+    <dimen name="dimen_24dp">24dp</dimen>
+    <dimen name="dimen_36dp">18.0dp</dimen>
+    <dimen name="dimen_37dp">18.5dp</dimen>
+    <dimen name="dimen_38dp">19.0dp</dimen>
+    <dimen name="dimen_39dp">19.5dp</dimen>
+    <dimen name="dimen_40dp">20dp</dimen>
+    <dimen name="dimen_41dp">20.5dp</dimen>
+    <dimen name="dimen_42dp">21dp</dimen>
+    <dimen name="dimen_43dp">21.5dp</dimen>
+    <dimen name="dimen_44dp">22dp</dimen>
+    <dimen name="dimen_45dp">22.5dp</dimen>
+    <dimen name="dimen_46dp">23dp</dimen>
+    <dimen name="dimen_47dp">23.5dp</dimen>
+    <dimen name="dimen_48dp">24dp</dimen>
+    <dimen name="dimen_49dp">24.5dp</dimen>
+    <dimen name="dimen_50dp">25dp</dimen>
+    <dimen name="dimen_51dp">25.5dp</dimen>
+    <dimen name="dimen_60dp">30dp</dimen>
+    <dimen name="dimen_80dp">40dp</dimen>
+    <dimen name="dimen_100dp">50dp</dimen>
+    <dimen name="dimen_150dp">75dp</dimen>
+    <dimen name="dimen_190dp">95dp</dimen>
+    <dimen name="dimen_200dp">100dp</dimen>
+    <dimen name="dimen_220dp">110dp</dimen>
+    <dimen name="dimen_360dp">180dp</dimen>
+
+    <dimen name="dimen_16sp">16dp</dimen>
+    <dimen name="dimen_14sp">14dp</dimen>
+    <dimen name="dimen_15sp">15dp</dimen>
+    <dimen name="dimen_20sp">20dp</dimen>
+    <dimen name="dimen_28sp">28dp</dimen>
+
+
+</resources>
