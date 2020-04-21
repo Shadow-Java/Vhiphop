@@ -49,7 +49,7 @@ public class HomeActivity extends BaseActivity {
         mDrawableLayout.addDrawerListener(mActionBarDrawerToggle);//mActionBarDrawerToggle能控制开关，md能控制弹入弹出显示
 
         mPreItem=mNavigationView.getMenu().getItem(0);
-        mPreItem.setCheckable(true);
+        mPreItem.setChecked(true);
         initFragment();
         handleNavigationViewItem();
     }
@@ -101,6 +101,7 @@ public class HomeActivity extends BaseActivity {
                 }
                 mDrawableLayout.closeDrawer(Gravity.LEFT);
                 mPreItem = menuItem;
+                mPreItem.setChecked(true);
                 return false;
             }
         });

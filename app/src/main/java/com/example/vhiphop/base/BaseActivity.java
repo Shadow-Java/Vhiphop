@@ -38,6 +38,9 @@ import com.example.vhiphop.R;
             setActionBar(mToolBar);
         }
     }
+   protected void setSupportArrowActionBar(boolean isSupport){//字体页面有箭头
+            getSupportActionBar().setDisplayHomeAsUpEnabled(isSupport);
+   }
 
     protected void setActionBarIcon(int resId){
         if(mToolBar != null){

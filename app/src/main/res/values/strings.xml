@@ -20,5 +20,8 @@
     <string name="d_name">古惑仔</string>
     <string name="e_name">赌神</string>
 
+    <string name="site_letv">乐视视频</string>
+    <string name="site_souhu">搜狐视频</string>
 
+    <string name="data_failed_tip">数据加载失败，请检查网络！</string>
 </resources>

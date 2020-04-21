@@ -26,6 +26,8 @@
         <activity android:name=".GuideActivity"/>
         <activity android:name=".HomeActivity"
             android:theme="@style/DefaultAppTheme"/>
+        <activity android:name=".DetailListActivity"
+            android:theme="@style/AppTheme.ActionBar"/>
     </application>
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 

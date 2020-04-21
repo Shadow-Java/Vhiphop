@@ -48,6 +48,7 @@ import com.hejunlin.superindicatorlibray.LoopViewPager;
                         break;
                     default:
                         //TODO 跳转对应的频道
+                        DetailListActivity.LaunchDetailListActivity(getActivity(),position + 1);
                         break;
                 }
             }

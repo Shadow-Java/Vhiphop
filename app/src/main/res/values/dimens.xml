@@ -43,6 +43,7 @@
     <dimen name="dimen_15sp">15dp</dimen>
     <dimen name="dimen_20sp">20dp</dimen>
     <dimen name="dimen_28sp">28dp</dimen>
+    <dimen name="dimen_32sp">32dp</dimen>
 
 
 </resources>
