@@ -10,4 +10,7 @@
     <color name="white">#ffffff</color>
     <color name="fragment_bg_color">#D3D3D3</color>
     <color name="text_color">#262626</color>
+    <color name="grey_medium">#999999</color>
+
+
 </resources>

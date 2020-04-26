@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_about"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 <!-- 当前无网络时提示数据加载出错-->
+   <com.example.vhiphop.widget.PullLoadRecyclerView
+       android:id="@+id/pullloadRecyclerView"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:scrollbars="none"
+       android:padding="@dimen/dimen_4dp"
+       android:numColums="3"
+       android:overScrollMode="never"/>
    <TextView
        android:id="@+id/tv_empty"
        android:layout_width="match_parent"
@@ -13,4 +21,4 @@
        android:gravity="center"
        android:textSize="@dimen/dimen_32sp"
        android:text="@string/data_failed_tip"/>
-</LinearLayout>
+</FrameLayout>
