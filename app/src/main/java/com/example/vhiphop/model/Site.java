@@ -30,11 +30,8 @@ public class Site {
 
         }
     }
-    public  String getChannelName(){
-        return siteName;
-    }
 
-    public  int getChannelId(){
+    public int getSiteId(){
         return siteId;
     }
 

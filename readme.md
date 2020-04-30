@@ -29,3 +29,18 @@
   是一个Google原生的控件，属于android.support.v4.widget包下
 2.自定义RecyclerView上拉加载更多
   Inflate一个View，在加载更多时，加载完成后消失
+
+
+3.数据Model
++ 序列化的方法
++ 序列化原则
+  + 在使用内存的时候，Parcelable比Serializable性能高，保存对象的字节序列到本地文件中
+  + Serializable在序列化的时候会产生大量的临时变量，从而引起频繁的GC。
++ Parcelable接口
+  + 优点：
+    + 永久性保存对象，保存对象的字节序列到本地文件中；
+    + 通过序列化对象在网络中传递对象；
+    + 通过序列化在进程间传递对象
+
+4.sohu数据Model
+
