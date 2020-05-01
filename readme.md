@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <h1 align="center">安卓点播视频APP</h1>
-=======
- :iphone:<h1 align="center">安卓点播视频APP</h1>
->>>>>>> 7e948a81532cb2fec456b1e0a3cb1bb39d6010b9
 
 ## :penguin:前言
 本项目是从B站UP主学习所得，主要用于提供学友源码参考，共同学习共同进步！我跟小伙伴一样通过视频学习自己敲的代码，觉得帮助到你的可以点个**STAR**:star:
