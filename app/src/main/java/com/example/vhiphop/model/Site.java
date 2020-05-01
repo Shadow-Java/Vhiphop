@@ -9,23 +9,22 @@ import com.example.vhiphop.R;
  *邮箱：1723928492@qq.com
  */
 public class Site {
-    public static final int LETV =1;//乐视TV
-    public static final int SOHU=2;//搜狐
+    public static final int SOHU=1;//搜狐
+    public static final int LETV =2;//乐视TV
 
     private   int siteId;//序列化ID
     private   String siteName;
     private Context mContext;
     public static final int MAX_SITE = 2;
 
-    public Site(int id, Context context){
+    public Site(int id){
         siteId = id;
-        mContext = context;
         switch(siteId){
             case LETV:
-                siteName = mContext.getResources().getString(R.string.site_letv);
+                siteName = "乐视视频";
                 break;
             case SOHU:
-                siteName = mContext.getResources().getString(R.string.site_souhu);
+                siteName = "搜狐视频";
                 break;
 
         }

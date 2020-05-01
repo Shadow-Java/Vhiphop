@@ -10,7 +10,7 @@ import com.example.vhiphop.model.Site;
  *邮箱：1723928492@qq.com
  */
 public class SiteApi {//组合LetvApi和SohuApi
-    public void onGetChannelAlbums(Context context,int pageNo, int pageSize, int siteId, int channelId, onGetChannelAlbumListener listener){
+    public static void onGetChannelAlbums(Context context,int pageNo, int pageSize, int siteId, int channelId, onGetChannelAlbumListener listener){
         switch (siteId){
             case Site.LETV:
                 new LetApi().onGetChannelAlbums(new Channel(channelId,context),pageNo,pageSize,listener);

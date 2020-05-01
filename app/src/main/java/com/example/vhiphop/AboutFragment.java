@@ -9,7 +9,8 @@ import com.example.vhiphop.base.BaseFragment;
 /*
  *作者：created by Administrator on 2020/3/20 23:06
  *邮箱：1723928492@qq.com
- */public class AboutFragment extends BaseFragment {
+ */
+public class AboutFragment extends BaseFragment {
     @Override
     protected void initView() {
        TextView textView = bindViewId(R.id.tv_app_description);

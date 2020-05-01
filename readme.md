@@ -1,8 +1,7 @@
-:iphone:<h1 align="center">安卓点播视频APP</h1>
+<h1 align="center">安卓点播视频APP</h1>
 
 ## :penguin:前言
-本项目是从B站UP主学习所得，主要用于提供学友源码参考，共同学习共同进步！  
-我跟小伙伴一样通过视频学习自己敲的代码，觉得帮助到你的可以点个**STAR**:star:
+本项目是从B站UP主学习所得，主要用于提供学友源码参考，共同学习共同进步！我跟小伙伴一样通过视频学习自己敲的代码，觉得帮助到你的可以点个**STAR**:star:
 
 **学习来源**：
 [树`郗](https://www.bilibili.com/video/BV1Hb411T742?t=6854&p=4)
@@ -24,13 +23,13 @@
 
 ## :reminder_ribbon:详情页面：
 
-1.自定义RecyclerView下拉刷新
+1. 自定义RecyclerView下拉刷新
   SwipeRefreshLayout,下拉刷新
   是一个Google原生的控件，属于android.support.v4.widget包下
-2.自定义RecyclerView上拉加载更多
+2. 自定义RecyclerView上拉加载更多
   Inflate一个View，在加载更多时，加载完成后消失
 
-3.数据Model
+3. 数据Model
 + 序列化的方法
 + 序列化原则
   + 在使用内存的时候，Parcelable比Serializable性能高，保存对象的字节序列到本地文件中
@@ -41,5 +40,5 @@
     + 通过序列化对象在网络中传递对象；
     + 通过序列化在进程间传递对象
 
-4.sohu数据Model
+4. sohu数据Model
 

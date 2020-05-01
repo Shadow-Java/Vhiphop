@@ -78,7 +78,7 @@ public class SohuApi extends BaseSiteApi {
         if(result.getData().getResultAlbumList().size()>0){
             AlbumList albumList = new AlbumList();
             for(ResultAlbum resultAlbum : result.getData().getResultAlbumList()){
-                Album album = new Album(Site.SOHU,AppManager.getContext());
+                Album album = new Album(Site.SOHU);
                 album.setAlbumDesc(resultAlbum.getTvDesc());
                 album.setAlbumId(resultAlbum.getAlbumId());
                 album.setHorImgUrl(resultAlbum.getHorHighPic());

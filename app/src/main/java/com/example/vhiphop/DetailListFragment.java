@@ -1,8 +1,11 @@
 package com.example.vhiphop;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -11,7 +14,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.vhiphop.api.SiteApi;
+import com.example.vhiphop.api.onGetChannelAlbumListener;
 import com.example.vhiphop.base.BaseFragment;
+import com.example.vhiphop.model.Album;
+import com.example.vhiphop.model.AlbumList;
+import com.example.vhiphop.model.Channel;
+import com.example.vhiphop.model.EorrorInfo;
 import com.example.vhiphop.model.Site;
 import com.example.vhiphop.widget.PullLoadRecyclerView;
 
@@ -20,8 +29,9 @@ import com.example.vhiphop.widget.PullLoadRecyclerView;
  *邮箱：1723928492@qq.com
  */
 public class DetailListFragment extends BaseFragment {
-    private static int mSiteId;
-    private static int mChannelId;
+    private static final String TAG = DetailListFragment.class.getSimpleName();
+    private  int mSiteId;
+    private  int mChannelId;
     private static final String CHANNEL_ID = "channelid";
     private static final String SITE_ID = "siteid";
     private PullLoadRecyclerView mRecyclerView;
@@ -31,18 +41,15 @@ public class DetailListFragment extends BaseFragment {
     private Handler mHandler = new Handler(Looper.getMainLooper());//在主线程
     private static final int REFRESH_DURATION = 1500;//刷数据1500毫秒
     private static final int LOADMORE_DURATION = 3000;//加载一页或者几十个相关数据
+    private int pageNo;
+    private int pageSize = 30;
+    //private Handler mHandler = new Handler(Looper.getMainLooper());//正在加载数据是子线程 UI刷新是主线程
 
-//    public DetailListFragment(int siteId,int channId){//SiteId是搜狐还是乐视 channId是电影还是电视剧
-//        mSiteId = siteId;
-//        mChannelId = channId;
-//    }
     public DetailListFragment(){//需要空的构造 才不会出错
     }
 
     public static Fragment newInstance(int siteId,int channId){
         DetailListFragment fragment = new DetailListFragment();
-        mSiteId = siteId;
-        mChannelId = channId;
         Bundle bundle = new Bundle();//把值传入fragment里面去 bundle intent传值
         bundle.putInt(SITE_ID,siteId);//把值放入bundle
         bundle.putInt(CHANNEL_ID,channId);
@@ -53,8 +60,13 @@ public class DetailListFragment extends BaseFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(getArguments() != null){
+            mSiteId = getArguments().getInt(SITE_ID);
+            mChannelId = getArguments().getInt(CHANNEL_ID);
+        }
+        pageNo = 0;
+        mAdapter = new DetailListAdapter(getActivity(),new Channel(mChannelId,getActivity()));
         loadData();
-        mAdapter = new DetailListAdapter();
         if(mSiteId == Site.LETV){//乐视下相关频道2列
             mColumns = 2;
             mAdapter.setColumns(mColumns);
@@ -74,7 +86,42 @@ public class DetailListFragment extends BaseFragment {
         //TODO 请求接口，加载数据
 }
     private void loadData(){
-        //TODO 请求接口，加载更多数据
+        // 请求接口，加载更多数据
+        pageNo ++;
+        SiteApi.onGetChannelAlbums(getActivity(), pageNo, pageSize, mSiteId, mChannelId, new onGetChannelAlbumListener() {
+            @Override
+            public void onGetChannelAlbumSuccess(AlbumList albumList) {
+                /*for(Album album : albumList){//打印数据
+                    Log.d(TAG,">> album"+album.toString());
+                }*/
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        mEmptyView.setVisibility(View.GONE);//注释掉正在加载数据
+                    }
+                });
+                for(Album album : albumList) {
+                    mAdapter.setData(album);
+                }
+                mHandler.post(new Runnable() {//刷新
+                    @Override
+                    public void run() {
+                        mAdapter.notifyDataSetChanged();
+                    }
+                });
+
+            }
+
+            @Override
+            public void onGetChannelAlbumFailed(EorrorInfo info) {
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        mEmptyView.setText(getActivity().getResources().getString(R.string.data_failed_tip));
+                    }
+                });
+            }
+        });
     }
     class PullLoadMoreListener implements PullLoadRecyclerView.OnPullLoadMoreListener {
 
@@ -102,6 +149,12 @@ public class DetailListFragment extends BaseFragment {
     }
 
     class DetailListAdapter extends RecyclerView.Adapter{
+        private Context mContext;
+        private Channel mChannel;
+        public DetailListAdapter(Context context,Channel channel){
+            mContext = context;
+            mChannel = channel;
+        }
 
         @NonNull
         @Override
@@ -119,6 +172,9 @@ public class DetailListFragment extends BaseFragment {
             return 0;
         }
         public void setColumns(int columns){
+            //TODO
+        }
+        public void setData(Album album){
             //TODO
         }
     }
