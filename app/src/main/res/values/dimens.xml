@@ -36,12 +36,15 @@
     <dimen name="dimen_190dp">95dp</dimen>
     <dimen name="dimen_200dp">100dp</dimen>
     <dimen name="dimen_220dp">110dp</dimen>
+    <dimen name="dimen_240dp">120dp</dimen>
     <dimen name="dimen_360dp">180dp</dimen>
 
     <dimen name="dimen_16sp">16dp</dimen>
     <dimen name="dimen_14sp">14dp</dimen>
     <dimen name="dimen_15sp">15dp</dimen>
     <dimen name="dimen_20sp">20dp</dimen>
+    <dimen name="dimen_24sp">24dp</dimen>
+    <dimen name="dimen_26sp">26dp</dimen>
     <dimen name="dimen_28sp">28dp</dimen>
     <dimen name="dimen_32sp">32dp</dimen>
 

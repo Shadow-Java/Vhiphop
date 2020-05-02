@@ -42,3 +42,9 @@
 
 4. sohu数据Model
 
+![](https://picturestr.oss-cn-shanghai.aliyuncs.com/img/20200502214141.png)
+
+![](https://picturestr.oss-cn-shanghai.aliyuncs.com/img/20200502214208.png)
+
+![](https://picturestr.oss-cn-shanghai.aliyuncs.com/img/20200502214227.png)
+
