@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/dimen_20dp"
-        android:src="@drawable/head_image_0" />
+        android:layout_gravity="center" />
 
     <TextView
         android:id="@+id/tv_load_text"

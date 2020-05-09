@@ -24,7 +24,7 @@ public class ImageUtils {
                 Glide.with(view.getContext())
                         .load(url)//图片加载url
                         .error(R.drawable.ic_loading_hor)//出错时使用默认图
-                        .centerCrop()//设置图片居中
+                        .fitCenter()//横图不会截图 centCrop会截大图 不会自适应
                         .override(height,width)//重写宽高
                         .into(view);//加载imageview上
             }else{
@@ -54,6 +54,15 @@ public class ImageUtils {
         return point;
     }
 
+    public static Point getHorPostSize(Context context,int columns){
+        int width = getScreenWidthPixel(context)/columns;
+        width = width - (int) context.getResources().getDimension(R.dimen.dimen_8dp);
+        int height = Math.round((float)width/HOR_POSTER_RATIO);
+        Point point = new Point();
+        point.x = width;
+        point.y = height;
+        return point;
+    }
     public static int getScreenWidthPixel(Context context){//获取屏幕宽度
         WindowManager wm = (WindowManager)context.getSystemService(context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();

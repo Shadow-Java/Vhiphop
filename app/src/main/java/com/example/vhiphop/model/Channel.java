@@ -38,7 +38,7 @@ public class Channel implements Serializable {//序列化
         mContext = context;
         switch(ID){
             case SHOW:
-                ChannelName = "电视剧";
+                ChannelName = "电视剧";//电视剧
                 break;
             case MOVIE:
                 ChannelName = "电影";

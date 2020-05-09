@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -71,8 +72,9 @@ public class DetailListFragment extends BaseFragment {
             mChannelId = getArguments().getInt(CHANNEL_ID);
         }
         pageNo = 0;
+        mAdapter =null;
         mAdapter = new DetailListAdapter(getActivity(),new Channel(mChannelId,getActivity()));
-        loadData();
+        loadData();//第一次加载数据
         if(mSiteId == Site.LETV){//乐视下相关频道2列
             mColumns = 2;
             mAdapter.setColumns(mColumns);
@@ -80,6 +82,8 @@ public class DetailListFragment extends BaseFragment {
             mColumns = 3;
             mAdapter.setColumns(mColumns);
         }
+        //mRecyclerView.setAdapter(mAdapter);
+        Toast.makeText(getActivity(),"已加载到最新数据",Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -87,7 +91,7 @@ public class DetailListFragment extends BaseFragment {
         mEmptyView = bindViewId(R.id.tv_empty);
         mEmptyView.setText(getActivity().getResources().getString(R.string.load_more_text));
         mRecyclerView = bindViewId(R.id.pullloadRecyclerView);//拥有刷新和上拉加载更多的特点
-        mRecyclerView.setGridLayout(3);//设置3列
+        mRecyclerView.setGridLayout(mColumns);//设置3列
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setOnPullLoadMoreListener(new PullLoadMoreListener());
     }
@@ -191,11 +195,21 @@ public class DetailListFragment extends BaseFragment {
                     itemViewHolder.albumTip.setText(album.getTip());
                 }
                 //重新计算宽高
-                Point point = ImageUtils.getVerPostSize(mContext,mColunmns);
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(point.x,point.y);
-                itemViewHolder.albumPoster.setLayoutParams(params);
+                Point point = null;
+                if(mColunmns == 2){//横图相关
+                    point = ImageUtils.getHorPostSize(mContext,mColunmns);
+                    RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(point.x,point.y);
+                    itemViewHolder.albumPoster.setLayoutParams(params);
+                }else{
+                    point = ImageUtils.getVerPostSize(mContext,mColunmns);
+                    RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(point.x,point.y);
+                    itemViewHolder.albumPoster.setLayoutParams(params);
+                }
+
                 if(album.getVerImgUrl() != null){
                     ImageUtils.disPlayImage(itemViewHolder.albumPoster,album.getVerImgUrl(),point.x,point.y);
+                }else if(album.getHorImgUrl() != null){
+                    ImageUtils.disPlayImage(itemViewHolder.albumPoster,album.getHorImgUrl(),point.x,point.y);
                 }else{
                     //TODO 使用默认图
                 }
